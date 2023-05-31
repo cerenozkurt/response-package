@@ -6,7 +6,7 @@
         "psr-4": {
             "CerenOzkurt\\ResponseMessages\\": "src/"
         },
-         "files": [
+        "files": [
             "src/ResponseTrait.php"
         ]
     },
@@ -18,5 +18,7 @@
     ],
     "require-dev": {
         "orchestra/testbench": "^8.5"
-    }
+    },
+    "minimum-stability": "stable",
+    "require": {}
 }
