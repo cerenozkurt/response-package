@@ -122,4 +122,88 @@ trait ResponseTrait
             'data'      => $data
         ], 200);
     }
+
+    public function responseBadRequest($message = null)
+    {
+        if ($message != null) {
+            return new JsonResponse([
+                'result' => false,
+                'error' => $message
+            ], 400);
+        }
+        return new JsonResponse([
+            'result' => false,
+            'error' => 'bad request'
+        ], 400);
+    }
+
+    public function responseConflict($message = null)
+    {
+        if ($message != null) {
+            return new JsonResponse([
+                'result' => false,
+                'error' => $message
+            ], 409);
+        }
+        return new JsonResponse([
+            'result' => false,
+            'error' => 'conflict'
+        ], 409);
+    }
+
+    public function responsePayloadTooLarge($message = null)
+    {
+        if ($message != null) {
+            return new JsonResponse([
+                'result' => false,
+                'error' => $message
+            ], 413);
+        }
+        return new JsonResponse([
+            'result' => false,
+            'error' => 'payload too large'
+        ], 413);
+    }
+
+    public function responseTooManyRequests($message = null)
+    {
+        if ($message != null) {
+            return new JsonResponse([
+                'result' => false,
+                'error' => $message
+            ], 429);
+        }
+        return new JsonResponse([
+            'result' => false,
+            'error' => 'too many requests'
+        ], 429);
+    }
+
+    public function responseInternalServer($message = null)
+    {
+        if ($message != null) {
+            return new JsonResponse([
+                'result' => false,
+                'error' => $message
+            ], 500);
+        }
+        return new JsonResponse([
+            'result' => false,
+            'error' => 'internal server error'
+        ], 500);
+    }
+
+    public function responseNotImplemented($message = null)
+    {
+        if ($message != null) {
+            return new JsonResponse([
+                'result' => false,
+                'error' => $message
+            ], 501);
+        }
+        return new JsonResponse([
+            'result' => false,
+            'error' => 'not implemented'
+        ], 501);
+    }
 }
