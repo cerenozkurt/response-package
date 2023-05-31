@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'ceren-ozkurt/response-messages',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => 'ef008a6ee1519bb65f980dc1bd0004972af0bed1',
+        'pretty_version' => '1.0.0',
+        'version' => '1.0.0.0',
+        'reference' => NULL,
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -20,9 +20,9 @@
             'dev_requirement' => true,
         ),
         'ceren-ozkurt/response-messages' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => 'ef008a6ee1519bb65f980dc1bd0004972af0bed1',
+            'pretty_version' => '1.0.0',
+            'version' => '1.0.0.0',
+            'reference' => NULL,
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
