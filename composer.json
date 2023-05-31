@@ -1,0 +1,22 @@
+{
+    "name": "ceren-ozkurt/response-messages",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "CerenOzkurt\\ResponseMessages\\": "src/"
+        },
+         "files": [
+            "src/ResponseTrait.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Ceren Özkurt",
+            "email": "33186246+cerenozkurt@users.noreply.github.com"
+        }
+    ],
+    "require-dev": {
+        "orchestra/testbench": "^8.5"
+    }
+}
