@@ -3,7 +3,7 @@
         'name' => 'ceren-ozkurt/response-messages',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'b324dd171a6b6518f71191f91d443918b23b92dd',
+        'reference' => 'fca78e4e34a74cd0e502b6cb4351d5ad2184b75d',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'ceren-ozkurt/response-messages' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'b324dd171a6b6518f71191f91d443918b23b92dd',
+            'reference' => 'fca78e4e34a74cd0e502b6cb4351d5ad2184b75d',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
