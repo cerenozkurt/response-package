@@ -9,8 +9,12 @@
  */
 namespace PHPUnit\Runner\Extension;
 
+use function count;
+use function explode;
 use function extension_loaded;
+use function implode;
 use function is_file;
+use function str_contains;
 use PharIo\Manifest\ApplicationName;
 use PharIo\Manifest\Exception as ManifestException;
 use PharIo\Manifest\ManifestLoader;
@@ -18,6 +22,7 @@ use PharIo\Version\Version as PharIoVersion;
 use PHPUnit\Event;
 use PHPUnit\Runner\Version;
 use SebastianBergmann\FileIterator\Facade as FileIteratorFacade;
+use Throwable;
 
 /**
  * @internal This class is not covered by the backward compatibility promise for PHPUnit
@@ -33,7 +38,7 @@ final class PharLoader
 
         if (!$pharExtensionLoaded) {
             Event\Facade::emitter()->testRunnerTriggeredWarning(
-                'Loading PHPUnit extension(s) from PHP archive(s) failed, PHAR extension not loaded'
+                'Loading PHPUnit extension(s) from PHP archive(s) failed, PHAR extension not loaded',
             );
         }
 
@@ -55,7 +60,7 @@ final class PharLoader
 
             try {
                 $applicationName = new ApplicationName('phpunit/phpunit');
-                $version         = new PharIoVersion(Version::series());
+                $version         = new PharIoVersion($this->phpunitVersion());
                 $manifest        = ManifestLoader::fromFile('phar://' . $file . '/manifest.xml');
 
                 if (!$manifest->isExtensionFor($applicationName)) {
@@ -75,17 +80,21 @@ final class PharLoader
                 continue;
             }
 
-            /**
-             * @psalm-suppress UnresolvableInclude
-             */
-            require $file;
+            try {
+                /** @psalm-suppress UnresolvableInclude */
+                @require $file;
+            } catch (Throwable $t) {
+                $notLoadedExtensions[] = $file . ': ' . $t->getMessage();
+
+                continue;
+            }
 
             $loadedExtensions[] = $manifest->getName()->asString() . ' ' . $manifest->getVersion()->getVersionString();
 
             Event\Facade::emitter()->testRunnerLoadedExtensionFromPhar(
                 $file,
                 $manifest->getName()->asString(),
-                $manifest->getVersion()->getVersionString()
+                $manifest->getVersion()->getVersionString(),
             );
         }
 
@@ -93,5 +102,22 @@ final class PharLoader
             'loadedExtensions'    => $loadedExtensions,
             'notLoadedExtensions' => $notLoadedExtensions,
         ];
+    }
+
+    private function phpunitVersion(): string
+    {
+        $version = Version::id();
+
+        if (!str_contains($version, '-')) {
+            return $version;
+        }
+
+        $parts = explode('.', explode('-', $version)[0]);
+
+        if (count($parts) === 2) {
+            $parts[] = 0;
+        }
+
+        return implode('.', $parts);
     }
 }

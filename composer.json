@@ -20,6 +20,6 @@
     "require-dev": {
         "orchestra/testbench": "^8.5"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {}
 }
