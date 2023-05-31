@@ -9,22 +9,15 @@
  */
 namespace PHPUnit\Runner;
 
-use function sprintf;
 use RuntimeException;
 
 /**
  * @internal This class is not covered by the backward compatibility promise for PHPUnit
  */
-final class ClassDoesNotExtendTestCaseException extends RuntimeException implements Exception
+final class NoTestCaseObjectOnCallStackException extends RuntimeException implements Exception
 {
-    public function __construct(string $className, string $file)
+    public function __construct()
     {
-        parent::__construct(
-            sprintf(
-                'Class %s declared in %s does not extend PHPUnit\Framework\TestCase',
-                $className,
-                $file,
-            ),
-        );
+        parent::__construct('Cannot find TestCase object on call stack');
     }
 }

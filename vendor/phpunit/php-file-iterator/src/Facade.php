@@ -20,12 +20,11 @@ use SplFileInfo;
 final class Facade
 {
     /**
-     * @psalm-param non-empty-string $path
-     * @psalm-param list<non-empty-string>|string $suffixes
-     * @psalm-param list<non-empty-string>|string $prefixes
-     * @psalm-param list<non-empty-string> $exclude
+     * @psalm-param list<string>|string $suffixes
+     * @psalm-param list<string>|string $prefixes
+     * @psalm-param list<string> $exclude
      *
-     * @psalm-return list<non-empty-string>
+     * @psalm-return list<string>
      */
     public function getFilesAsArray(string $path, array|string $suffixes = '', array|string $prefixes = '', array $exclude = []): array
     {

@@ -12,8 +12,7 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/sebastianbergmann/complexity/issues",
-        "security": "https://github.com/sebastianbergmann/complexity/security/policy"
+        "issues": "https://github.com/sebastianbergmann/complexity/issues"
     },
     "prefer-stable": true,
     "require": {
