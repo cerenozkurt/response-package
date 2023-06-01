@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ba594af6a8a9df83ebd0766292fb5523",
+    "content-hash": "7c105901f84f5f90e7ba645459eda480",
     "packages": [],
     "packages-dev": [
         {
@@ -2843,12 +2843,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "7b22e98989d0ead0608125d889cc57f006179160"
+                "reference": "5e66c111b64a7ac7fe0acb17ae78b1111d3070c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7b22e98989d0ead0608125d889cc57f006179160",
-                "reference": "7b22e98989d0ead0608125d889cc57f006179160",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/5e66c111b64a7ac7fe0acb17ae78b1111d3070c5",
+                "reference": "5e66c111b64a7ac7fe0acb17ae78b1111d3070c5",
                 "shasum": ""
             },
             "require": {
@@ -2889,7 +2889,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "10.2-dev"
+                    "dev-main": "10.3-dev"
                 }
             },
             "autoload": {
@@ -2937,7 +2937,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-05-31T15:31:58+00:00"
+            "time": "2023-06-01T06:03:31+00:00"
         },
         {
             "name": "pimple/pimple",

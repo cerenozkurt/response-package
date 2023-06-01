@@ -31,5 +31,5 @@ return array(
     '58571171fd5812e6e447dce228f52f4d' => $vendorDir . '/laravel/framework/src/Illuminate/Support/helpers.php',
     'eb46fcca3fbadc07be542e9e42c8b07c' => $vendorDir . '/orchestra/testbench-core/src/helpers.php',
     'ec07570ca5a812141189b1fa81503674' => $vendorDir . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
-    '92e8012cff667cd9582d3873b1ad7c9d' => $baseDir . '/src/ResponseTrait.php',
+    '9945e832d7e9f096d57150674845a378' => $baseDir . '/src/ResponseTrait.php',
 );

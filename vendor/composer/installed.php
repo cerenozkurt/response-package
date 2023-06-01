@@ -1,6 +1,6 @@
 <?php return array(
     'root' => array(
-        'name' => 'ceren-ozkurt/response-messages',
+        'name' => 'cerenimo/response-messages',
         'pretty_version' => '1.0.0',
         'version' => '1.0.0.0',
         'reference' => NULL,
@@ -19,7 +19,7 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
-        'ceren-ozkurt/response-messages' => array(
+        'cerenimo/response-messages' => array(
             'pretty_version' => '1.0.0',
             'version' => '1.0.0.0',
             'reference' => NULL,
@@ -611,11 +611,11 @@
         'phpunit/phpunit' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '7b22e98989d0ead0608125d889cc57f006179160',
+            'reference' => '5e66c111b64a7ac7fe0acb17ae78b1111d3070c5',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpunit/phpunit',
             'aliases' => array(
-                0 => '10.2.x-dev',
+                0 => '10.3.x-dev',
             ),
             'dev_requirement' => true,
         ),

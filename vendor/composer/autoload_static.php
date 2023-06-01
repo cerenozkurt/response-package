@@ -32,7 +32,7 @@ class ComposerStaticInitf1eb1e9d9a737436dc2e2b034f2ba7bc
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         'eb46fcca3fbadc07be542e9e42c8b07c' => __DIR__ . '/..' . '/orchestra/testbench-core/src/helpers.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
-        '92e8012cff667cd9582d3873b1ad7c9d' => __DIR__ . '/../..' . '/src/ResponseTrait.php',
+        '9945e832d7e9f096d57150674845a378' => __DIR__ . '/../..' . '/src/ResponseTrait.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -347,8 +347,8 @@ class ComposerStaticInitf1eb1e9d9a737436dc2e2b034f2ba7bc
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\EventDispatcher\\' => 
         array (

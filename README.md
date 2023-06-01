@@ -1,6 +1,6 @@
 # Response Messages
 ```php
-composer require ceren-ozkurt/response-messages "dev-main" 
+composer require cerenimo/response-messages "dev-main" 
  ```
 
 <br>
