@@ -66,3 +66,15 @@ The package provides the following functions:
 - **responseTryCatch($message = null, $status = 500)** : *Use in try-catch error.*
 
 - **responseDataCount($data)** : *Use if the data need count information.*
+
+- **responseBadRequest($message = null)** : *Use if the sent request is incorrect.*
+
+- **responseConflict($message = null)** : *Use if a mismatch occurs due to a predetermined rule or version differences on the web server of your request.*
+
+- **responsePayloadTooLarge($message = null)** : *Use if the request entity is much larger than the limits defined by the server.*
+
+- **responseTooManyRequests($message = null)** : *Use if the website exceeded the specified request limit.*
+
+- **responseInternalServer($message = null)** : *Use if a server-side error occurred.*
+
+- **responseNotImplemented($message = null)** : *Use if the server does not support the features required to fulfill the request.*
