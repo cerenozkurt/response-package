@@ -7,7 +7,7 @@ use Illuminate\Http\JsonResponse;
 trait ResponseTrait
 {
     public function responseData($data, $message = null)
-    {
+    {   
         if ($message != null) {
             return new JsonResponse([
                 'result' => true,
@@ -206,4 +206,60 @@ trait ResponseTrait
             'error' => 'not implemented'
         ], 501);
     }
+
+    public function responseDataWithPagination($paginateData, $dataName = null, $message = null)
+    {
+        if ($dataName) {
+            $datas = [$dataName => $paginateData->items()];
+        } else {
+            $datas = $paginateData->items();
+        }
+        $pagination = [
+            'links' => [
+                'first' => $paginateData->onFirstPage(),
+                'last' => $paginateData->onLastPage(),
+                'prev' => $paginateData->previousPageUrl(),
+                'next' => $paginateData->nextPageUrl(),
+            ],
+            'meta' => [
+                'current_page' => $paginateData->currentPage(),
+                'from' => $paginateData->firstItem(),
+                'to' => $paginateData->lastItem(),
+                'per_page' => $paginateData->perPage(),
+                'total' => $paginateData->total(),
+            ],
+        ];
+
+        if ($message != null) {
+            return new JsonResponse([
+                'result' => true,
+                'message' => $message,
+                'data' => $datas,
+                'page' => $pagination
+
+            ], 200);
+        }
+        return new JsonResponse([
+            'result' => true,
+            'data' => $datas,
+            'page' => $pagination
+
+        ], 200);
+    }
+
+    public function responseInvalidToken($message = null)
+    {
+        if ($message != null) {
+            return new JsonResponse([
+                'result' => false,
+                'error' => $message
+            ], 498);
+        }
+        return new JsonResponse([
+            'result' => false,
+            'error' => 'invalid token'
+        ], 498);
+    }
+
+
 }
