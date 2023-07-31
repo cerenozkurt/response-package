@@ -7,7 +7,7 @@ use Illuminate\Http\JsonResponse;
 trait ResponseTrait
 {
     public function responseData($data, $message = null)
-    {   
+    {
         if ($message != null) {
             return new JsonResponse([
                 'result' => true,
@@ -261,5 +261,11 @@ trait ResponseTrait
         ], 498);
     }
 
-
+    public function responseErrorMessage($message, $statusCode = 400)
+    {
+        return new JsonResponse([
+            'result' => false,
+            'message' => $message
+        ], $statusCode);
+    }
 }
